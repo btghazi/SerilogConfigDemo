@@ -15,7 +15,7 @@ namespace SerilogDemo
             .AddJsonFile(path: "appsettings.json", optional: false, reloadOnChange: true)
             // Use appsettings file for each environment to override specific configuration.
             // Example : Configure Seq only in Development as it's only used for local dev.
-            .AddJsonFile(path: $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}", optional: true, reloadOnChange: true)
+            .AddJsonFile(path: $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: false, reloadOnChange: true)
             .Build();
 
             Log.Logger = new LoggerConfiguration()
